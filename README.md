@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Comrounds
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+A prototype, shy of MVP, platform for healthcare practioners to find community patient rounds.
 
 ## Available Scripts
 
