@@ -7,7 +7,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from "react-bootstrap/Button";
 
 const Home = (props) => {
-    const [inputValue, setInputValue] = useState('M5S');
+    const [inputValue, setInputValue] = useState('');
 
 
     const goToPostalCode = () =>{
@@ -36,7 +36,7 @@ const Home = (props) => {
                         <InputGroup.Prepend>
                             <InputGroup.Text id="inputGroup-sizing-lg" >1st-half</InputGroup.Text>
                         </InputGroup.Prepend>
-                        <FormControl aria-label="Postal" aria-describedby="inputGroup-sizing-sm" placeholder="example: M5S or P1B" value={inputValue} onChange={updateInputValue} required/>
+                        <FormControl aria-label="Postal" aria-describedby="inputGroup-sizing-sm" placeholder="example: M5S or P1B (M5S for pre-populated example)" value={inputValue} onChange={updateInputValue} required/>
                         <Button type="submit" onClick={goToPostalCode} variant={"info"}>Go</Button>
                     </InputGroup>
                 </div>

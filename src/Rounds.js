@@ -203,7 +203,7 @@ const Rounds = (props) => {
                     />
                 </InputGroup>
                 <br/>
-                <Button onClick={createRound}>Schedule round</Button>
+                <Button onClick={createRound} variant={"info"}>Schedule round</Button>
                 <br/>
                 <br/>
             </div>
