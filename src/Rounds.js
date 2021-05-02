@@ -52,7 +52,7 @@ const Rounds = (props) => {
 
 
     useEffect(()=>{
-        setPostalCode(props.match.params.id)
+        setPostalCode(props.match.params.id.toUpperCase())
 
         if (!Firebase.apps.length) {
             Firebase.initializeApp(config);
@@ -63,7 +63,7 @@ const Rounds = (props) => {
         }
 
         let roundsData = []
-        Firebase.database().ref('regions/' + props.match.params.id + "/").once('value', function (snap) {
+        Firebase.database().ref('regions/' + props.match.params.id.toUpperCase() + "/").once('value', function (snap) {
             snap.forEach(function (childSnapshot) {
 
                 let childKey = childSnapshot.key;
@@ -211,6 +211,17 @@ const Rounds = (props) => {
 
         }
     }
+    const orSch = () =>{
+        if (rounds.length > 0){
+            return(
+                <h6>...or schedule a new round</h6>
+            )
+        }else{
+            return (
+                <h6>No rounds yet, be the first to schedule a round</h6>
+            )
+        }
+    }
 
     return (
         <div className="App">
@@ -231,7 +242,7 @@ const Rounds = (props) => {
             </div>
             <br/>
             <br/>
-            <h6>...or schedule a new round</h6>
+            {orSch()}
             {submittedAlert()}
 
         </div>
